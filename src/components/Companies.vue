@@ -2,14 +2,14 @@
   <div class="companies-wrapper">
     <h1>{{ someVar }}</h1>
     <div v-for="company in companyDataList" :key="company.title">
-      {{ company.title }}
+      <CompanyTitle :title="company.title" />
     </div>
-
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import CompanyTitle from '@/views/CompanyTitle';
 
 export default {
   name: 'Companies',
@@ -21,6 +21,9 @@ export default {
   },
   beforeMount() {
     this.getCompanies();
+  },
+  components: {
+    CompanyTitle
   },
   methods: {
     getCompanies() {
