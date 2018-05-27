@@ -3,7 +3,7 @@
     <div v-for="company in companyDataList" :key="company.title" class="company-wrapper">
       <div @mouseover="showCompanyDetails">
         <CompanyLogo :logo="company.logo" />
-        <CompanyTitle :title="company.title" />
+        <CompanyTitle :title="company.title" :url="company.url" />
         <CompanyDetails :companyDetails="company.description" />
       </div>
     </div>
@@ -81,6 +81,7 @@ export default {
 
 @media (max-width: 90em) {
   .companies-wrapper {
+    margin-top: 42px;
     grid-template-columns: repeat(2, 1fr);
     padding: 20px;
   }
@@ -88,8 +89,11 @@ export default {
 
 @media (max-width: 52em) {
   .companies-wrapper {
+    margin-top: 42px;
     grid-template-columns: repeat(1, 1fr);
     padding: 4px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   .company-wrapper {
