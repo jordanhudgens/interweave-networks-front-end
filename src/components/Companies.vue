@@ -70,6 +70,7 @@ export default {
   background-color: #42b983;
   padding: 3em;
   transition: 0.3s;
+  border-radius: 3px;
 
   &:hover {
     background-color: #29394b;
@@ -81,11 +82,11 @@ export default {
 @media (max-width: 90em) {
   .companies-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    padding: 50px;
+    padding: 20px;
   }
 }
 
-@media (max-width: 60em) {
+@media (max-width: 52em) {
   .companies-wrapper {
     grid-template-columns: repeat(1, 1fr);
     padding: 4px;
