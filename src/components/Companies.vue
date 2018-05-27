@@ -1,15 +1,18 @@
 <template>
   <div class="companies-wrapper">
-    <h1>{{ someVar }}</h1>
-    <div v-for="company in companyDataList" :key="company.title">
+    <div v-for="company in companyDataList" :key="company.title" class="company-wrapper">
       <CompanyTitle :title="company.title" />
+      <CompanyLogo :logo="company.logo" />
+      <CompanyDetails :companyDetails="company.description" />
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CompanyTitle from '@/views/CompanyTitle';
+import CompanyTitle from '@/views/company/CompanyTitle';
+import CompanyLogo from '@/views/company/CompanyLogo';
+import CompanyDetails from '@/views/company/CompanyDetails';
 
 export default {
   name: 'Companies',
@@ -23,7 +26,9 @@ export default {
     this.getCompanies();
   },
   components: {
-    CompanyTitle
+    CompanyTitle,
+    CompanyLogo,
+    CompanyDetails
   },
   methods: {
     getCompanies() {
@@ -49,5 +54,29 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.companies-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 100px;
+}
 
+.company-wrapper {
+  background-color: #42b983;
+  padding: 3em;
+}
+
+@media (max-width: 80em) {
+  .companies-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px;
+  }
+}
+
+@media (max-width: 48em) {
+  .companies-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 4px;
+  }
+}
 </style>
