@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .homepage-logo {
-  width: 200px;
+  width: 300px;
 }
 </style>
 

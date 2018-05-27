@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
+    <img class="corp-logo" src="@/assets/logo.png">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
     <Companies />
   </div>
 </template>
@@ -15,3 +19,16 @@ export default {
   },
 }
 </script>
+
+<style>
+.corp-logo {
+  width: 400px;
+}
+
+@media (max-width: 48em) {
+  .corp-logo {
+    width: 300px;
+  }
+}
+</style>
+

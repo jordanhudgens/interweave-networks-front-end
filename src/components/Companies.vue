@@ -1,9 +1,11 @@
 <template>
   <div class="companies-wrapper">
     <div v-for="company in companyDataList" :key="company.title" class="company-wrapper">
-      <CompanyTitle :title="company.title" />
-      <CompanyLogo :logo="company.logo" />
-      <CompanyDetails :companyDetails="company.description" />
+      <div @mouseover="showCompanyDetails">
+        <CompanyLogo :logo="company.logo" />
+        <CompanyTitle :title="company.title" />
+        <CompanyDetails :companyDetails="company.description" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +33,9 @@ export default {
     CompanyDetails
   },
   methods: {
+    showCompanyDetails(evt) {
+      console.log(evt.target);
+    },
     getCompanies() {
       axios
         .get("https://interweave-networks-api.herokuapp.com/companies",
@@ -57,26 +62,40 @@ export default {
 .companies-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 50px;
   padding: 100px;
 }
 
 .company-wrapper {
   background-color: #42b983;
   padding: 3em;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #29394b;
+    color: white;
+  }
 }
 
-@media (max-width: 80em) {
+
+@media (max-width: 90em) {
   .companies-wrapper {
     grid-template-columns: repeat(2, 1fr);
     padding: 50px;
   }
 }
 
-@media (max-width: 48em) {
+@media (max-width: 60em) {
   .companies-wrapper {
     grid-template-columns: repeat(1, 1fr);
     padding: 4px;
+  }
+
+  .company-wrapper {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 </style>

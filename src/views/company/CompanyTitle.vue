@@ -1,7 +1,7 @@
 <template>
-  <div class="company-title">
+  <h2 class="company-title">
     {{ title}}
-  </div>
+  </h2>
 </template>
 
 <script>
