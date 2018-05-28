@@ -94,6 +94,8 @@ export default {
     border: #42b983 1px solid;
     color: #29394b;
     border-radius: 5px;
+    height: 42px;
+    font-weight: 900;
   }
 
   input[type="text"] {
