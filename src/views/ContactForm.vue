@@ -85,6 +85,7 @@ export default {
     border-left: 1px transparent;
     border-bottom: 1px #42b983 solid;
     padding-bottom: 5px;
+    border-radius: 0px;
   }
 
   button {
@@ -92,6 +93,7 @@ export default {
     background-color: #42b983;
     border: #42b983 1px solid;
     color: #29394b;
+    border-radius: 5px;
   }
 
   input[type="text"] {
@@ -105,6 +107,7 @@ export default {
     color: #eaeaea;
     border: 1px solid #42b983;
     padding: 10px;
+    border-radius: 0px;
   }
 }
 </style>
