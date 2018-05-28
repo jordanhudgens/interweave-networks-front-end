@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <div class="contact-button">
+    <div @click="toggleContactForm" class="contact-button">
       Contact us
     </div>
+    <ContactForm v-show="showContactForm" />
 
     <img class="corp-logo" src="@/assets/logo.png">
     <h2>Featured Properties</h2>
     <Companies />
-    <ContactForm />
+
   </div>
 </template>
 
@@ -17,10 +18,20 @@ import ContactForm from '@/views/ContactForm';
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      showContactForm: false
+    }
+  },
   components: {
     Companies,
     ContactForm
   },
+  methods: {
+    toggleContactForm() {
+      this.showContactForm = !this.showContactForm;
+    }
+  }
 }
 </script>
 
