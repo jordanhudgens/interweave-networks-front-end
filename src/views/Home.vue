@@ -3,16 +3,19 @@
     <img class="corp-logo" src="@/assets/logo.png">
     <h2>Featured Properties</h2>
     <Companies />
+    <ContactForm />
   </div>
 </template>
 
 <script>
 import Companies from '@/components/Companies';
+import ContactForm from '@/views/ContactForm';
 
 export default {
   name: 'Home',
   components: {
-    Companies
+    Companies,
+    ContactForm
   },
 }
 </script>
