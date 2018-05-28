@@ -29,6 +29,25 @@ export default {
       console.log(this.fullName);
       console.log(this.email);
       console.log(this.contactMessage);
+
+      axios
+        .post("https://interweave-networks-api.herokuapp.com/leads",
+        {
+          name: this.fullName,
+          email: this.email,
+          message: this.contactMessage,
+          auth: {
+            username: process.env.VUE_APP_API_KEY,
+            password: process.env.VUE_APP_API_SECRET
+          }
+        })
+        .then(response => {
+          console.log(response.data);
+          return response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        })
     }
   }
 }
