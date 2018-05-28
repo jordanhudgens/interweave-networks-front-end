@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <img class="corp-logo" src="@/assets/logo.png">
-    <div class="nav">
-      <router-link class="nav-link" to="/">Home</router-link>
-      <router-link class="nav-link" to="/about">About</router-link>
-      <router-link class="nav-link" to="/contact">Contact</router-link>
-    </div>
+    <h2>Featured Properties</h2>
     <Companies />
   </div>
 </template>
