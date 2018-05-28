@@ -1,9 +1,12 @@
 <template>
   <div class="home">
     <div @click="toggleContactForm" class="contact-button">
-      Contact us
+      {{ contactFormLinkText }}
     </div>
-    <ContactForm v-show="showContactForm" />
+
+    <div v-show="showContactForm" class="contact-form-wrapper">
+      <ContactForm />
+    </div>
 
     <img class="corp-logo" src="@/assets/logo.png">
     <h2>Featured Properties</h2>
@@ -20,7 +23,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      showContactForm: false
+      showContactForm: false,
+      contactFormLinkText: 'Contact us'
     }
   },
   components: {
@@ -30,6 +34,12 @@ export default {
   methods: {
     toggleContactForm() {
       this.showContactForm = !this.showContactForm;
+
+      if (this.showContactForm) {
+        this.contactFormLinkText = 'Close'
+      } else {
+        this.contactFormLinkText = 'Contact us'
+      }
     }
   }
 }
@@ -57,6 +67,15 @@ export default {
   }
 }
 
+.contact-form-wrapper {
+  position: absolute;
+  right: 0;
+  padding: 42px;
+  background: #262626;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 400px;
+}
 
 .corp-logo {
   width: 500px;

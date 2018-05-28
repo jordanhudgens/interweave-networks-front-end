@@ -11,7 +11,7 @@
         <h2>{{ responseMessage }}</h2>
       </div>
 
-      <form @submit.prevent="submitContactForm">
+      <form @submit.prevent="submitContactForm" class="form-wrapper">
 
         <input type="text" v-model="fullName" placeholder="Full Name">
         <input type="text" v-model="email" placeholder="Email">
@@ -40,10 +40,6 @@ export default {
   },
   methods: {
     submitContactForm() {
-      console.log(this.fullName);
-      console.log(this.email);
-      console.log(this.contactMessage);
-
       axios
         .post("https://interweave-networks-api.herokuapp.com/leads",
         {
@@ -75,4 +71,41 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.form-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-gap: 20px;
+
+  input {
+    background-color: transparent;
+    border-top: 1px transparent;
+    border-right: 1px transparent;
+    border-left: 1px transparent;
+    border-bottom: 1px #42b983 solid;
+    padding-bottom: 5px;
+  }
+
+  button {
+    font-size: 1em;
+    background-color: #42b983;
+    border: #42b983 1px solid;
+    color: #29394b;
+  }
+
+  input[type="text"] {
+    font-size: 1.2em;
+    color: #eaeaea;
+  }
+
+  textarea {
+    background-color: transparent;
+    font-size: 1.2em;
+    color: #eaeaea;
+    border: 1px solid #42b983;
+    padding: 10px;
+  }
+}
+</style>
 
