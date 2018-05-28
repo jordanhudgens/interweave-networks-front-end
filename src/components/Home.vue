@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+    <div class="contact-button">
+      Contact us
+    </div>
+
     <img class="corp-logo" src="@/assets/logo.png">
     <h2>Featured Properties</h2>
     <Companies />
@@ -21,6 +25,28 @@ export default {
 </script>
 
 <style lang="scss">
+.contact-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #42b983;
+  color: white;
+  width: 150px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #29394b;
+    color: white;
+  }
+}
+
+
 .corp-logo {
   width: 500px;
 }
