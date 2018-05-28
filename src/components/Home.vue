@@ -101,6 +101,11 @@ export default {
 @media (max-width: 48em) {
   .corp-logo {
     width: 300px;
+    margin-top: 20px;
+  }
+
+  .contact-form-wrapper {
+    width: 80vw;
   }
 }
 </style>
